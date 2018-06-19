@@ -1,0 +1,7 @@
+bin
+include
+lib
+pip-selfcheck.json
+*.svg
+.idea/
+__pycache__/
