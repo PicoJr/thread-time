@@ -3,63 +3,63 @@
   "segments": [
     {
       "group": 0,
-      "text": "thread0",
-      "time_start": 1529353093846,
-      "time_end": 1529353094087
+      "text": "task 0",
+      "time_start": 10,
+      "time_end": 40
     },
     {
       "group": 1,
-      "text": "thread1",
-      "time_start": 1529353093846,
-      "time_end": 1529353094047
+      "text": "task 1",
+      "time_start": 15,
+      "time_end": 60
+    },
+    {
+      "group": 1,
+      "text": "task 2",
+      "time_start": 65,
+      "time_end": 80
     },
     {
       "group": 2,
-      "text": "thread2",
-      "time_start": 1529353093847,
-      "time_end": 1529353094068
+      "text": "task 3",
+      "time_start": 5,
+      "time_end": 80
+    },
+    {
+      "group": 2,
+      "text": "task 4",
+      "time_start": 82,
+      "time_end": 100
     },
     {
       "group": 3,
-      "text": "thread3",
-      "time_start": 1529353093847,
-      "time_end": 1529353094058
+      "text": "task 5",
+      "time_start": 45,
+      "time_end": 100
     },
     {
       "group": 4,
-      "text": "thread4",
-      "time_start": 1529353093848,
-      "time_end": 1529353094069
+      "text": "task 6",
+      "time_start": 50,
+      "time_end": 70
+    },
+    {
+      "group": 4,
+      "text": "task 7",
+      "time_start": 32,
+      "time_end": 46
+    },
+    {
+      "group": 4,
+      "text": "task 8",
+      "time_start": 10,
+      "time_end": 24
     },
     {
       "group": 5,
-      "text": "thread5",
-      "time_start": 1529353093848,
-      "time_end": 1529353094078
-    },
-    {
-      "group": 6,
-      "text": "thread6",
-      "time_start": 1529353093848,
-      "time_end": 1529353094079
-    },
-    {
-      "group": 7,
-      "text": "thread7",
-      "time_start": 1529353093849,
-      "time_end": 1529353094049
-    },
-    {
-      "group": 8,
-      "text": "thread8",
-      "time_start": 1529353094048,
-      "time_end": 1529353094259
-    },
-    {
-      "group": 9,
-      "text": "thread9",
-      "time_start": 1529353094049,
-      "time_end": 1529353094290
+      "text": "task 9",
+      "time_start": 42,
+      "time_end": 98
     }
   ]
 }
