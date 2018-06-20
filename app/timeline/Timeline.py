@@ -39,12 +39,13 @@ class Timeline(object):
         scaled_width = (x1 - x0)
         color = self.config.PALETTE[segment.group % len(self.config.PALETTE)]
         dwg.add(dwg.rect((x0, y0), (scaled_width, self.scaled_height), rx=1, ry=1, fill=color, fill_opacity=0.5))
-        segment_label = "{} ({} {})".format(segment.text, segment.time_end - segment.time_start, self.time_unit)
-        dwg.add(dwg.text(segment_label, (x0, y0 + self.scaled_height * 0.25), font_size=self.config.FONT_SIZE))
-        time_start_label = "{} {}".format(segment.time_start - self.time_start, self.time_unit)
-        time_end_label = "{} {}".format(segment.time_end - self.time_start, self.time_unit)
-        dwg.add(dwg.text(time_start_label, (x0, y0 + self.scaled_height * 0.5), font_size=self.config.FONT_SIZE))
-        dwg.add(dwg.text(time_end_label, (x0, y0 + self.scaled_height * 0.75), font_size=self.config.FONT_SIZE))
+        if scaled_width >= self.config.LABEL_SIZE_MIN:
+            segment_label = "{} ({} {})".format(segment.text, segment.time_end - segment.time_start, self.time_unit)
+            dwg.add(dwg.text(segment_label, (x0, y0 + self.scaled_height * 0.25), font_size=self.config.FONT_SIZE))
+            time_start_label = "{} {}".format(segment.time_start - self.time_start, self.time_unit)
+            time_end_label = "{} {}".format(segment.time_end - self.time_start, self.time_unit)
+            dwg.add(dwg.text(time_start_label, (x0, y0 + self.scaled_height * 0.5), font_size=self.config.FONT_SIZE))
+            dwg.add(dwg.text(time_end_label, (x0, y0 + self.scaled_height * 0.75), font_size=self.config.FONT_SIZE))
 
     def draw(self, dwg):
         self._draw_background(dwg)

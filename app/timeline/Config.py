@@ -12,6 +12,7 @@ class Config(object):
         self.TICKS = 20
         self.PALETTE = [svgwrite.rgb(244, 67, 54)]
         self.FONT_SIZE = 4
+        self.LABEL_SIZE_MIN = 10
 
     @staticmethod
     def load(file_name):
@@ -23,6 +24,7 @@ class Config(object):
             config.FONT_SIZE = data.get("font_size", 2)
             config.TICKS = data.get("time_ticks", 2)
             config.TIME_AXIS_HEIGHT = data.get("time_axis_height", 10)
+            config.LABEL_SIZE_MIN = data.get("label_size_min", 10)
             palette = []
             for palette_entry in data.get("palette", []):
                 rgb = [int(rgb_value) for rgb_value in re.findall("\d+", palette_entry)]

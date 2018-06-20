@@ -4,6 +4,7 @@
   "font_size": 4,
   "time_ticks": 20,
   "time_axis_height": 10,
+  "label_size_min": 30,
   "palette": [
     "(244, 67, 54)",
     "(156, 39, 176)",
