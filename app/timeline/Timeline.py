@@ -13,6 +13,14 @@ class Timeline(object):
         self.groups = len(set(s.group for s in self.segments))  # todo case groups empty
         self.scaled_height = self.config.HEIGHT / self.groups
         self.ratio = self.config.WIDTH / (self.time_end - self.time_start)
+        self.color_map = self._build_color_map()
+
+    def _build_color_map(self):
+        color_map = {}
+        segment_groups = set(s.group for s in self.segments)
+        for i, group in enumerate(segment_groups):
+            color_map[group] = self.config.PALETTE[i % len(self.config.PALETTE)]
+        return color_map
 
     def _draw_grid(self, dwg):
         for x in range(0, self.config.WIDTH, self.config.TICKS):
@@ -37,7 +45,7 @@ class Timeline(object):
         x1 = (segment.time_end - self.time_start) * self.ratio
         y0 = self.scaled_height * (segment.group % self.groups)
         scaled_width = (x1 - x0)
-        color = self.config.PALETTE[segment.group % len(self.config.PALETTE)]
+        color = self.color_map[segment.group]
         dwg.add(dwg.rect((x0, y0), (scaled_width, self.scaled_height), rx=1, ry=1, fill=color, fill_opacity=0.5))
         if scaled_width >= self.config.LABEL_SIZE_MIN:
             segment_label = "{} ({} {})".format(segment.text, segment.time_end - segment.time_start, self.time_unit)
